@@ -1,0 +1,22 @@
+{
+  "name": "etherscan",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon server.js"
+  },
+  "author": "Thorin",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "etherscan-api": "^8.1.2",
+    "express": "^4.16.3",
+    "handlebars": "^4.0.11",
+    "nodemon": "^1.18.3",
+    "pug": "^2.0.3",
+    "torrent-search-api": "^1.1.6",
+    "yts-api-pt": "^2.0.0"
+  }
+}

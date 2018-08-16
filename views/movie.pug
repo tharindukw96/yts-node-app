@@ -1,0 +1,81 @@
+html
+  head
+    title= title
+    link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css')
+    script(src='https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js')
+    script(src='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js')
+  body(style= 'background-color:black')
+    div(class='container ' style='color:white')
+        br
+        br
+        div(class='row')
+            div(class='col-sm-3')
+                img(src=medium_cover_image style='border-color:white')
+            div(class='col-sm-4')
+                h3= titleLong
+                h4= year
+                h4= genre
+                img(src="http://icons-for-free.com/icon/download-appreciate_facebook_like_icon-610225.ico" style='width:25px;height:25px;float:left;margin-right:5%')
+                h4= like_count 
+                img(src='http://www.iconarchive.com/download/i80460/uiconstock/socialmedia/IMDb.ico' style='width:29px;height:29px;float:left;margin-right:5%')
+                h4= rating
+                img(src='http://www.iconarchive.com/download/i86012/graphicloads/100-flat-2/arrow-download.ico' style='width:28px;height:28px;float:left;margin-right:5%')
+                h4= download_count
+                br
+                h4= "Available In"
+                each val in torrents
+                    button(class="btn btn-primary btn-md" style='margin-right:2%')= val
+            div(class='col-sm-5')
+                h4= "Suggestions"
+                div(class='row')
+                    div(class='col-sm-4')
+                        img(src=movieArr[0][0] onclick="javascript:window.location='../"+movieArr[0][1]+"'" style='border-color:white;border-style: solid;border-width: 5px;width:130px;height220px;margin: 3px 3px 3px 3px')
+                    div(class='col-sm-4')
+                        img(src=movieArr[1][0] onclick="javascript:window.location='../"+movieArr[1][1]+"'" style='border-color:white;border-style: solid;border-width: 5px;width:130px;height220px;margin: 3px 3px 3px 3px')
+                div(class='row')
+                    div(class='col-sm-4')
+                        img(src=movieArr[2][0] onclick="javascript:window.location='../"+movieArr[2][1]+"'" style='border-color:white;border-style: solid;border-width: 5px;width:130px;height220px;margin: 3px 3px 3px 3px')
+                    div(class='col-sm-4')
+                        img(src=movieArr[3][0] onclick="javascript:window.location='../"+movieArr[3][1]+"'" style='border-color:white;border-style: solid;border-width: 5px;width:130px;height220px;margin: 3px 3px 3px 3px')
+        div(class='row')
+            div(class='col-sm-8')
+                h4="Synopsis"
+                p(style="text-align:justify;color:gray;font-size:16px")= description_full
+            div(class='col-sm-4')
+                h4="Cast"
+                div(class='list-group')
+                    each character in cast
+                        img(src=character[2] style='border-radius:10%;float:left;margin-right:5%')
+                        p=character[0]
+                        p(style='float:left;color:gray')="("+character[1]+")"
+                        br  
+                        br
+        div(class='row container')
+            div(class='col-sm-12')
+                table(class='table')
+                    thead()
+                        tr(style='color:white')
+                            td()="Quality"
+                            td()="Size"
+                            td()="Seeds"
+                            td()="Peers"
+                            td()="Hash"
+                            td()="Download"
+                    tbody()
+                        each file in torrFiles
+                            tr()
+                                td(style='color:white')=file[0]
+                                td()=file[1]
+                                td()=file[2]
+                                td()=file[3]
+                                td()=file[5]
+                                td()
+                                    a(class="btn btn-primary btn-md" href=file[4] style='margin-right:2%')= "Download"
+        br
+        br
+        br
+
+        
+        
+
+    
